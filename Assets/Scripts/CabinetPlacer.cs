@@ -6,8 +6,9 @@ public class CabinetPlacer : MonoBehaviour
 {
     public GameObject cabinetPrefab;
     public static int n_column = 10;
-    public static int n_cabinet_per_column = 20;
+    public static int n_cabinet_per_column = 10;
     public float space_btwn_column;
+    public float space_btwn_row;
     public float rack_width_z;
 
     private float left_anchor;
@@ -33,8 +34,8 @@ public class CabinetPlacer : MonoBehaviour
                 cabinet.transform.parent = cabinets.transform;
                 cabinet.name = string.Format("cabinet_{0}_{1}", i, j);
                 transceiver = cabinet.transform.Find("Transceiver").gameObject;
-                transceiver.transform.localPosition += new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
-                pos_z += rack_width_z;
+                // transceiver.transform.localPosition += new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
+                pos_z += rack_width_z + space_btwn_row;
             }
             pos_z = bottom_anchor;
             pos_x += space_btwn_column;
