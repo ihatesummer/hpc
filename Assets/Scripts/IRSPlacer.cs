@@ -8,8 +8,8 @@ public class IRSPlacer : MonoBehaviour
     public GameObject IRS_panelPrefab;
     public int n_column = 10;  // x boundary
     public int n_row = 10;  // z boundary
-    public float left_anchor = -5.5f; // x boundary
-    public float right_anchor = 9.5f;  // x boundary
+    public float left_anchor = -6f; // x boundary
+    public float right_anchor = 9f;  // x boundary
     public float bottom_anchor = 0.5f; // z boundary
     public float top_anchor = 9.5f; // z boundary
     public float x_spacing;
@@ -21,9 +21,10 @@ public class IRSPlacer : MonoBehaviour
     void Awake()
     {
         GameObject irs = new GameObject("IRS");
+        // irs.transform.position = 
         GameObject IRSboard = Instantiate(
             IRS_boardPrefab,
-            new Vector3(2f, 5.9f, 5f),
+            new Vector3(1.5f, 5.9f, 5f),
             Quaternion.Euler(0f, 0f, 0f));
         IRSboard.name = string.Format("IRS_board");
         IRSboard.transform.parent = irs.transform;
@@ -54,6 +55,11 @@ public class IRSPlacer : MonoBehaviour
             pos_z = bottom_anchor;
             pos_x += x_spacing;
         }
+
+        GameObject irs2 = GameObject.Instantiate(irs);
+        irs2.transform.name = "IRS_2";
+        irs2.transform.position += new Vector3(22f, 0f, 0f);
+
         bComplete = true;
     }
 }
