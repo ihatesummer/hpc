@@ -11,6 +11,7 @@ public class rWineLinkManager2 : MonoBehaviour
     public List<GameObject> transceivers;
     public List<GameObject> panels;
     private GameObject transceiver;
+    public GameObject beam;
 
     void Start()
     {
@@ -37,11 +38,12 @@ public class rWineLinkManager2 : MonoBehaviour
         float dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         Vector3 direction = panel.transform.position - tx.transform.position;
-        GameObject beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        GameObject beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -53,11 +55,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        GameObject beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        GameObject beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;
@@ -74,11 +77,12 @@ public class rWineLinkManager2 : MonoBehaviour
         dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         direction = panel.transform.position - tx.transform.position;
-        beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -90,11 +94,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;
@@ -112,11 +117,12 @@ public class rWineLinkManager2 : MonoBehaviour
         dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         direction = panel.transform.position - tx.transform.position;
-        beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -128,11 +134,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;
@@ -149,11 +156,12 @@ public class rWineLinkManager2 : MonoBehaviour
         dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         direction = panel.transform.position - tx.transform.position;
-        beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -165,11 +173,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;
@@ -186,11 +195,12 @@ public class rWineLinkManager2 : MonoBehaviour
         dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         direction = panel.transform.position - tx.transform.position;
-        beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -202,11 +212,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;
@@ -223,11 +234,12 @@ public class rWineLinkManager2 : MonoBehaviour
         dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         direction = panel.transform.position - tx.transform.position;
-        beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -239,11 +251,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;
@@ -260,11 +273,12 @@ public class rWineLinkManager2 : MonoBehaviour
         dist = Vector3.Distance(
             tx.transform.position, panel.transform.position);
         direction = panel.transform.position - tx.transform.position;
-        beam_tx2panel = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_tx2panel.transform.position = tx.transform.position + direction / 2;
+        beam_tx2panel = Instantiate(beam);
+        beam_tx2panel.transform.position = tx.transform.position + direction;
         beam_tx2panel.transform.rotation = Quaternion.LookRotation(direction);
-        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_tx2panel.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_tx2panel.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2panel.transform.Rotate(180f, 0f, 0f);
+        beam_tx2panel.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_tx2panel.GetComponent<MeshRenderer>().material = Ray_material;
         beam_tx2panel.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_tx2panel.transform.parent = this.transform;
@@ -276,11 +290,12 @@ public class rWineLinkManager2 : MonoBehaviour
         // panel to RX
         dist = Vector3.Distance(panel.transform.position, rx.transform.position);
         direction = rx.transform.position - panel.transform.position;
-        beam_panel2rx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        beam_panel2rx.transform.position = panel.transform.position + direction / 2;
+        beam_panel2rx = Instantiate(beam);
+        beam_panel2rx.transform.position = rx.transform.position;
         beam_panel2rx.transform.rotation = Quaternion.LookRotation(direction);
-        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-        beam_panel2rx.transform.localScale = new Vector3(beamRadius, dist / 2, beamRadius);
+        beam_panel2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_panel2rx.transform.Rotate(180f, 0f, 0f);
+        beam_panel2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
         beam_panel2rx.GetComponent<MeshRenderer>().material = Ray_material;
         beam_panel2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
         beam_panel2rx.transform.parent = this.transform;

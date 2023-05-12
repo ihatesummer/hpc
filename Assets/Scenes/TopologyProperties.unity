@@ -6329,10 +6329,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onStatus: 0
-  beamRadius: 0.06
+  beamRadius: 0.1
   n_wWINE: 25
   Ray_material: {fileID: 2100000, guid: d4bb10b67b28220408c3ce92ba793611, type: 2}
   transceivers: []
+  beam: {fileID: 919132149155446097, guid: c5f1c62211c98a84f8e5d125b013bd97, type: 3}
 --- !u!114 &1158287259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6345,11 +6346,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d97db6eda1c624197b0bb2e56ca7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beamRadius: 0.06
+  beamRadius: 0.1
   n_rWINE: 6
   Ray_material: {fileID: 2100000, guid: f10358aefa2b12b4e9d7f0e7b408c8f2, type: 2}
   transceivers: []
   panels: []
+  beam: {fileID: 919132149155446097, guid: c5f1c62211c98a84f8e5d125b013bd97, type: 3}
 --- !u!1 &1171977388
 GameObject:
   m_ObjectHideFlags: 0
@@ -6510,11 +6512,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38eeeb8dbcf38924eb79141755e544be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beamRadius: 0.06
+  beamRadius: 0.1
   n_rWINE: 0
   Ray_material: {fileID: 2100000, guid: f10358aefa2b12b4e9d7f0e7b408c8f2, type: 2}
   transceivers: []
   panels: []
+  beam: {fileID: 919132149155446097, guid: c5f1c62211c98a84f8e5d125b013bd97, type: 3}
 --- !u!114 &1198589542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6528,10 +6531,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onStatus: 0
-  beamRadius: 0.06
+  beamRadius: 0.1
   n_wWINE: 0
   Ray_material: {fileID: 2100000, guid: d4bb10b67b28220408c3ce92ba793611, type: 2}
   transceivers: []
+  beam: {fileID: 919132149155446097, guid: c5f1c62211c98a84f8e5d125b013bd97, type: 3}
 --- !u!1 &1230560055
 GameObject:
   m_ObjectHideFlags: 0
