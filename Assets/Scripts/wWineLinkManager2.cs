@@ -16,265 +16,40 @@ public class wWineLinkManager2 : MonoBehaviour
         if(onStatus){
             onStatus = false;
             transceivers = this.gameObject.GetComponent<rWineLinkManager2>().transceivers;
-
-            // For figure - uniform
-            GameObject tx = transceivers[10];
-            GameObject rx = transceivers[23];
-            float dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            Vector3 direction = rx.transform.position - tx.transform.position;
-            GameObject beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            Rigidbody RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[13];
-            rx = transceivers[5];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[21];
-            rx = transceivers[32];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[31];
-            rx = transceivers[50];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[41];
-            rx = transceivers[54];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[65];
-            rx = transceivers[78];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[90];
-            rx = transceivers[62];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[96];
-            rx = transceivers[82];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[38];
-            rx = transceivers[43];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[14];
-            rx = transceivers[27];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[19];
-            rx = transceivers[28];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[17];
-            rx = transceivers[8];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-
-            tx = transceivers[83];
-            rx = transceivers[77];
-            dist = Vector3.Distance(
-                tx.transform.position, rx.transform.position);
-            direction = rx.transform.position - tx.transform.position;
-            beam_tx2rx = Instantiate(beam);
-            beam_tx2rx.transform.position = rx.transform.position;
-            beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
-            beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
-            beam_tx2rx.transform.Rotate(180f, 0f, 0f);
-            beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
-            beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
-            beam_tx2rx.GetComponent<MeshRenderer>().shadowCastingMode = 0;
-            beam_tx2rx.transform.parent = this.transform;
-            beam_tx2rx.name = string.Format(
-                "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
-            beam_tx2rx.tag = "beam";
-            RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
-            RB_tx2rx.isKinematic = true;
-            
+            // Hardcoding for figure
+            wWINE_manual(10, 23);
+            wWINE_manual(13, 5);
+            wWINE_manual(21, 32);
+            wWINE_manual(31, 50);
+            wWINE_manual(41, 54);
+            wWINE_manual(65, 78);
+            wWINE_manual(90, 62);
+            wWINE_manual(96, 82);
+            wWINE_manual(38, 43);
+            wWINE_manual(14, 27);
+            wWINE_manual(19, 28);
+            wWINE_manual(17, 8);
+            wWINE_manual(83, 77);
         }
+    }
+    void wWINE_manual(int tx_no, int rx_no){
+        GameObject tx = transceivers[tx_no];
+        GameObject rx = transceivers[rx_no];
+        float dist = Vector3.Distance(
+            tx.transform.position, rx.transform.position);
+        Vector3 direction = rx.transform.position - tx.transform.position;
+        GameObject beam_tx2rx = Instantiate(beam);
+        beam_tx2rx.transform.position = rx.transform.position;
+        beam_tx2rx.transform.rotation = Quaternion.LookRotation(direction);
+        beam_tx2rx.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 0f, 90f));
+        beam_tx2rx.transform.Rotate(180f, 0f, 0f);
+        beam_tx2rx.transform.localScale = new Vector3(beamRadius, beamRadius, dist);
+        beam_tx2rx.GetComponent<MeshRenderer>().material = Ray_material;
+        beam_tx2rx.transform.parent = this.transform;
+        beam_tx2rx.name = string.Format(
+            "{0}_to_{1}", tx.transform.parent.name, rx.transform.parent.name);
+        beam_tx2rx.tag = "beam";
+        Rigidbody RB_tx2rx = beam_tx2rx.AddComponent<Rigidbody>();
+        RB_tx2rx.isKinematic = true;
     }
 }

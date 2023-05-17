@@ -71,6 +71,10 @@ public class RackPlacer : MonoBehaviour
         racks2.transform.name = "Racks_2";
         racks2.transform.position += new Vector3(22.5f, 0f, 0f);
 
+        GameObject racks3 = GameObject.Instantiate(racks2);
+        racks3.transform.name = "Racks_3";
+        racks3.transform.position += new Vector3(22.5f, 0f, 0f);
+
         bComplete = true;
     }
 }

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 
-
-public class rWineLinkManager2 : MonoBehaviour
+public class rWineLinkManager3 : MonoBehaviour
 {
     public float beamRadius;
     public int n_rWINE;
@@ -16,7 +15,7 @@ public class rWineLinkManager2 : MonoBehaviour
 
     void Start()
     {
-        GameObject racks2 = GameObject.Find("Racks_2");
+        GameObject racks2 = GameObject.Find("Racks_3");
         foreach(Transform child in racks2.transform)
         {
             if(child.name[0]=='r'){
@@ -25,13 +24,14 @@ public class rWineLinkManager2 : MonoBehaviour
             }
         }
 
-        GameObject irs2 = GameObject.Find("IRS_2/Panels");
-        foreach(Transform child in irs2.transform)
+        GameObject irs3 = GameObject.Find("IRS_3/Panels");
+        foreach(Transform child in irs3.transform)
         {
             panels.Add(child.gameObject);
         }
 
         // Hardcoding for figure
+        rWINE_manual(90, 90, 82);
         rWINE_manual(11, 4, 7);
         rWINE_manual(33, 43, 61);
         rWINE_manual(80, 81, 75);
@@ -39,10 +39,44 @@ public class rWineLinkManager2 : MonoBehaviour
         rWINE_manual(25, 16, 9);
         rWINE_manual(36, 36, 45);
         rWINE_manual(85, 73, 53);
+        rWINE_manual(92, 93, 76);
+        rWINE_manual(70, 60, 42);
+        rWINE_manual(40, 52, 55);
+        rWINE_manual(20, 21, 23);
+        rWINE_manual(31, 1, 3);
+        rWINE_manual(73, 84, 95);
+        rWINE_manual(96, 87, 67);
+        rWINE_manual(58, 78, 78);
+        rWINE_manual(83, 95, 97);
+        rWINE_manual(47, 48, 39);
+        rWINE_manual(44, 46, 27);
+
+        // // Random connection
+        // for(int n=0; n<n_rWINE; n++)
+        // {
+        //     int tx_idx = Random.Range(0, transceivers.Count);
+        //     int rand_int = Random.Range(0, transceivers.Count);
+        //     while(rand_int == tx_idx){
+        //         rand_int = Random.Range(0, transceivers.Count);
+        //     }
+        //     int rx_idx = rand_int;
+        //     int panel_idx = Random.Range(0, panels.Count);
+            
+        //     rWINE_manual(tx_idx, panel_idx, rx_idx);
+
+        //     if(tx_idx<rx_idx){
+        //         transceivers.RemoveAt(tx_idx);
+        //         transceivers.RemoveAt(rx_idx-1);
+        //     }
+        //     else{
+        //         transceivers.RemoveAt(rx_idx);
+        //         transceivers.RemoveAt(tx_idx-1);
+        //     }
+        //     panels.RemoveAt(panel_idx);
+        // }
     
-        this.gameObject.GetComponent<wWineLinkManager2>().onStatus = true;
     }
-    
+
     void rWINE_manual(int tx_no, int panel_no, int rx_no){
         GameObject tx = transceivers[tx_no];
         GameObject panel = panels[panel_no];
@@ -91,4 +125,5 @@ public class rWineLinkManager2 : MonoBehaviour
         Rigidbody RB_panel2rx = beam_panel2rx.AddComponent<Rigidbody>();
         RB_panel2rx.isKinematic = true;
     }
+
 }

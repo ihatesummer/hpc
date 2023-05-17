@@ -19,7 +19,7 @@ public class LinkRecorder : MonoBehaviour
                 transceivers.Add(transceiver);
             }
         }
-        Debug.Log(transceivers.Count + " transceivers found");        
+        // Debug.Log(transceivers.Count + " transceivers found");        
     }
 
     void Update()

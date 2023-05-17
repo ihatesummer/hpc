@@ -60,6 +60,10 @@ public class IRSPlacer : MonoBehaviour
         irs2.transform.name = "IRS_2";
         irs2.transform.position += new Vector3(22f, 0f, 0f);
 
+        GameObject irs3 = GameObject.Instantiate(irs2);
+        irs3.transform.name = "IRS_3";
+        irs3.transform.position += new Vector3(22f, 0f, 0f);
+
         bComplete = true;
     }
 }
