@@ -59,7 +59,7 @@ public class RackPlacer : MonoBehaviour
             cable_vert.transform.position = new Vector3(pos_x, 0.5f, (pos_z+bottom_anchor)/2);
             cable_vert.transform.parent = racks.transform;
             cable_vert.transform.rotation *= Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
-            cable_vert.transform.localScale = new Vector3(0.07f, 6f, 0.07f);
+            cable_vert.transform.localScale = new Vector3(0.07f, 7f, 0.07f);
             cable_vert.GetComponent<MeshRenderer>().material = cable_material;
             cable_vert.name = string.Format("cable_vert_{0}", i);
 

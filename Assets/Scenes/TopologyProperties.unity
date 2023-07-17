@@ -6840,7 +6840,7 @@ MonoBehaviour:
   rackPrefab: {fileID: 2131769339849844932, guid: 1e1acd329e3559a4f9fa6c732ef5f77d, type: 3}
   space_btwn_column: 2
   space_btwn_row: 1
-  rack_width_z: 0.3
+  rack_width_z: 0.5
   transceivers: []
   bComplete: 0
   cable_material: {fileID: 2100000, guid: 9096774941b30e94483c6564c3f77cba, type: 2}
